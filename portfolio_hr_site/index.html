@@ -3,115 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Coordinator | 포트폴리오</title>
-    <meta name="description" content="채용 프로세스 설계·운영, 온보딩, 데이터 기반 채용을 강조하는 HR Coordinator 포트폴리오입니다.">
+    <title>손관주 | HR/People Ops Coordinator</title>
+    <meta name="description" content="B2B/B2G 교육사업 현장에서 정책·프로세스 정비, 인력선발·교육, KPI 기반 운영, 만족도·성과관리로 재계약과 매출 성장을 이끈 HR/People Ops 주니어 손관주의 포트폴리오입니다.">
+    <meta property="og:title" content="손관주 | HR/People Ops Coordinator 포트폴리오">
+    <meta property="og:description" content="정책, 선발, 데이터 기반 운영에 강점이 있는 HR/People Ops 주니어 손관주의 경력과 프로젝트를 확인하세요.">
+    <meta property="og:url" content="https://gwanju-son.github.io/gwanju-son-portfolio/portfolio_hr_site/">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">HR Coordinator</div>
-            <ul class="nav-menu">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">HR Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section id="hero" class="hero">
+    <header class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">채용과 사람을 연결하는 HR Coordinator</h1>
-                <p class="hero-subtitle">채용 프로세스 설계 · ATS 운영 · 온보딩 개선 · 데이터 기반 채용 의사결정</p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
-                    <a href="#contact" class="btn btn-secondary">연락하기</a>
-                </div>
+                <h1 id="profile-name" class="hero-title"></h1>
+                <p id="profile-role" class="hero-subtitle"></p>
+                <div id="contact-links" class="contact-links"></div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>HR 철학</h3>
-                    <p>효과적인 채용은 단순한 인원 충원이 아닙니다. 적합한 레벨의 후보를 빠르게 찾아내고, 
-                       온보딩과 초기 90일의 경험을 설계하여 조직과 개인의 성공 확률을 높입니다.
-                    </p>
-                    <p>데이터로 공급망처럼 후보파이프라인을 관리하고, ATS/HRIS를 활용해 운영 효율을 높입니다.</p>
-                </div>
-                <div class="about-skills">
-                    <h3>핵심 역량</h3>
-                    <div class="skill-tags">
-                        <span class="tag">채용 프로세스 설계</span>
-                        <span class="tag">온보딩 설계</span>
-                        <span class="tag">ATS/HRIS 운영</span>
-                        <span class="tag">데이터 기반 의사결정</span>
-                        <span class="tag">프로세스 개선</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main class="container">
+        <section id="summary" class="section">
+            <h2 class="section-title">Summary</h2>
+            <p id="profile-summary"></p>
+        </section>
 
-    <section id="experience" class="projects">
-        <div class="container">
+        <section id="skills" class="section">
+            <h2 class="section-title">Skills</h2>
+            <div id="skills-container" class="skill-tags"></div>
+        </section>
+
+        <section id="experience" class="section">
             <h2 class="section-title">Experience</h2>
-            <div id="experience-list" class="projects-grid">
-                <!-- Filled by script.js using data/linkedin_kg.json -->
-            </div>
-        </div>
-    </section>
+            <div id="experience-container" class="timeline"></div>
+        </section>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">HR Projects / Case Studies</h2>
-            <div id="hr-projects" class="projects-grid">
-                <!-- Filled by script.js -->
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="insights">
-        <div class="container">
-            <h2 class="section-title">Skills & Hiring Dashboard</h2>
-            <div class="insights-grid">
-                <div class="insight-card">
-                    <h3>Skilled Areas</h3>
-                    <canvas id="skills-radar" width="400" height="300"></canvas>
-                    <ul id="skills-list" style="margin-top:12px; list-style:none; padding-left:0;"></ul>
-                </div>
-                <div class="insight-card">
-                    <h3>Hiring Dashboard (예시)</h3>
-                    <canvas id="hiring-dashboard" width="400" height="300"></canvas>
-                    <div id="dashboard-legend" style="margin-top:12px; color:#6b7280;"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <p class="contact-message">이력서 또는 프로젝트 자료를 원하시면 연락주세요.</p>
-            <div class="contact-links">
-                <a href="mailto:your-email@example.com" class="contact-btn">Email</a>
-                <a href="https://www.linkedin.com" target="_blank" class="contact-btn">LinkedIn</a>
-            </div>
-        </div>
-    </section>
+        <section id="projects" class="section">
+            <h2 class="section-title">Projects</h2>
+            <div id="projects-container" class="projects-grid"></div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 HR Coordinator</p>
+            <p>&copy; 2025 손관주. All rights reserved.</p>
+            <div id="footer-links" class="contact-links"></div>
         </div>
     </footer>
 

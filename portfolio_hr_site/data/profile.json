@@ -1,0 +1,104 @@
+{
+  "name": "손관주",
+  "role": "HR/People Operations Coordinator",
+  "summary": "B2B/B2G 교육사업 현장에서 정책·프로세스 정비, 인력선발·교육, KPI 기반 운영, 만족도·성과관리로 재계약과 매출 성장을 이끈 HR/People Ops 주니어.",
+  "skills": [
+    "People Operations",
+    "Talent Programs (선발·온보딩·코칭 양성)",
+    "Policy & Process (SOP/템플릿/지식관리)",
+    "HR Analytics (설문·KPI·대시보드)",
+    "Stakeholder Management (공공/교육기관)",
+    "Vendor/파트너 관리",
+    "문서화·리포팅 (Notion/Google Workspace)",
+    "Tools: Notion, Google Sheets/Docs, Excel, Tableau, Figma, Python(SQL/Pandas-기초)"
+  ],
+  "experience": [
+    {
+      "company": "(주)오오칠팔구",
+      "title": "Program & Project Manager → Talent Development Manager",
+      "period": "2023.06–2024.06",
+      "highlights": [
+        "[HRD 프로그램 운영] 청년일경험(ESG형) 제안·선정 후 코치 선발·교육·스케줄 운영, 참여자/코치 커뮤니케이션 프로세스 정착",
+        "[정책·프로세스] 제안서·운영계획·회의 아젠다·SOP·FAQ·응대매크로를 템플릿화하여 반복업무 처리시간 단축",
+        "[데이터 기반 운영] 주간 만족도·참여지표 설계, 대시보드 공유, 인사이트 액션화 → 재계약/만족도 지표 개선",
+        "[다자 협업 조정] 교육청·재단·학회 등 이해관계자 일정·자료요청 중앙관리(Sheets/Drive), 전 과정 영어 커뮤니케이션",
+        "[행사 운영 품질관리] 디지털·AI 포럼(12회) 운영 총괄, 피드백→개선 루프 내재화로 만족도 95%+ 유지",
+        "[성과·확장] 10개+ 공공·교육기관 협업, 연매출 1억(’23) 달성에 기여, 굿네이버스/국제학교 방과후 프로그램으로 사업 확장"
+      ],
+      "metrics": [
+        "포럼 만족도 95%+ (12회)",
+        "유료 관객 124명/운영비 150만원 확보(학회·재단 협업행사)",
+        "기관 협업 10개+ & 연매출 1억(’23)",
+        "코치 선발·교육 운영(정규전환 3인 사례 기반 인재 파이프라인 운영 내역 보유)"
+      ],
+      "star_examples": [
+        {
+          "name": "청년일경험(ESG형) HRD 운영",
+          "S": "신규 프로젝트의 코치·참여자 운영 체계 부재",
+          "T": "선발–온보딩–평가–피드백 루프 설계",
+          "A": "요건정의, 공고·선발, 교육 커리큘럼/체크리스트, 주간 설문·대시보드, 1:1 피드백",
+          "R": "우수 인력 확보 및 운영 안정화, 지원율↑, 정규전환 3인"
+        },
+        {
+          "name": "반복업무 표준화",
+          "S": "대내·대외 요청 대응의 편차·지연",
+          "T": "SOP/FAQ/템플릿으로 균질화",
+          "A": "Notion 지식베이스, 회의록/결정 로그, 응대 매크로",
+          "R": "처리 리드타임 단축, 응대 품질 균일화"
+        }
+      ]
+    },
+    {
+      "company": "ReadingStar Institute",
+      "title": "담임교사/English Instructor",
+      "period": "2024.06–2024.12",
+      "highlights": [
+        "반별 KPI·성과보고 정례화, 학부모 커뮤니케이션 체계화",
+        "재등록률 100% (기관 평균 70%)"
+      ]
+    },
+    {
+      "company": "개인 교육사업(LLM 기반 1인 운영)",
+      "title": "Ops Owner",
+      "period": "2024.12–2025.06",
+      "highlights": [
+        "사업 신고–커리큘럼–마케팅–정산 흐름을 SOP·체크리스트로 표준화",
+        "LLM 보조로 문서 자동화 템플릿 구축"
+      ]
+    },
+    {
+      "company": "한국외대 발전협력팀",
+      "title": "교육조교 (요약)",
+      "period": "2019.09–2021.10",
+      "highlights": [
+        "운영 보조, 기본 문서화 경험 (세부 서술 생략)"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "HR Analytics & 리포팅",
+      "what": "만족도/참여 KPI 정의, 대시보드·주간 리포트",
+      "outcome": "개선 액션 반영→재계약/만족도 95%+ 유지"
+    },
+    {
+      "name": "Talent Pipeline 운영",
+      "what": "코치 선발–교육–평가–피드백 루프",
+      "outcome": "우수 인력 확보, 정규전환 3인"
+    },
+    {
+      "name": "SOP/지식베이스 구축",
+      "what": "응대 매크로, 체크리스트, 의사결정 로그",
+      "outcome": "처리시간 단축·품질 균질화"
+    }
+  ],
+  "contact": {
+    "email": "songj489@gmail.com",
+    "phone": "010-2170-6674",
+    "links": {
+      "LinkedIn": "https://www.linkedin.com/in/gwanjuson/",
+      "Blog": "https://blog.naver.com/songj489",
+      "GitHub": "https://github.com/Gwanju-Son"
+    }
+  }
+}

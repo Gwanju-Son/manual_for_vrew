@@ -1,65 +1,101 @@
-// Lightweight interactive JS for portfolio_hr
 document.addEventListener('DOMContentLoaded', () => {
-    // Populate experience from hr_projects.json
-    fetch('./data/hr_projects.json')
-        .then(r => r.json())
+    fetch('./data/profile.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
-            const expContainer = document.getElementById('experience-list');
-            const projectsContainer = document.getElementById('hr-projects');
-            if (!expContainer || !projectsContainer) return;
+            // Populate Header
+            document.getElementById('profile-name').textContent = data.name;
+            document.getElementById('profile-role').textContent = data.role;
+            
+            const contactLinksContainer = document.getElementById('contact-links');
+            const footerLinksContainer = document.getElementById('footer-links');
+            
+            let contactLinksHtml = '';
+            if (data.contact.email) {
+                contactLinksHtml += `<a href="mailto:${data.contact.email}" class="contact-btn">Email</a>`;
+            }
+            if (data.contact.links) {
+                for (const [name, url] of Object.entries(data.contact.links)) {
+                    contactLinksHtml += `<a href="${url}" target="_blank" class="contact-btn">${name}</a>`;
+                }
+            }
+            contactLinksContainer.innerHTML = contactLinksHtml;
+            footerLinksContainer.innerHTML = contactLinksHtml;
 
-            // Show entities of type '프로젝트', '프로그램' as experience/projects
-            const typesOfInterest = new Set(['프로젝트','프로그램']);
-            const entities = (data.entities || []).filter(e => typesOfInterest.has(e.type));
+            // Populate Summary
+            document.getElementById('profile-summary').textContent = data.summary;
 
-            entities.forEach(e => {
-                const card = document.createElement('div');
-                card.className = 'project-card';
-                card.innerHTML = `
-                    <h3>${e.name}</h3>
-                    <div style="color:#6b7280; margin:8px 0;">${e.type}</div>
-                    <p style="color:#374151">${e.description || ''}</p>
-                `;
-                expContainer.appendChild(card.cloneNode(true));
-                projectsContainer.appendChild(card);
+            // Populate Skills
+            const skillsContainer = document.getElementById('skills-container');
+            skillsContainer.innerHTML = data.skills.map(skill => `<span class="tag">${skill}</span>`).join('');
+
+            // Populate Experience
+            const experienceContainer = document.getElementById('experience-container');
+            experienceContainer.innerHTML = data.experience.map((exp, index) => `
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>${exp.company}</h3>
+                        <p class="timeline-title">${exp.title}</p>
+                        <span class="timeline-period">${exp.period}</span>
+                        <div class="stat-badges">
+                            ${(exp.metrics || []).map(metric => `<span class="stat-badge">${metric}</span>`).join('')}
+                        </div>
+                        <ul class="highlights">
+                            ${exp.highlights.map(h => `<li>${h}</li>`).join('')}
+                        </ul>
+                        ${(exp.star_examples || []).length > 0 ? `
+                        <div class="accordion">
+                            ${exp.star_examples.map((star, starIndex) => `
+                                <div class="accordion-item">
+                                    <button class="accordion-header" aria-expanded="false" aria-controls="star-${index}-${starIndex}">
+                                        <strong>STAR:</strong> ${star.name}
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div id="star-${index}-${starIndex}" class="accordion-content" hidden>
+                                        <p><strong>Situation:</strong> ${star.S}</p>
+                                        <p><strong>Task:</strong> ${star.T}</p>
+                                        <p><strong>Action:</strong> ${star.A}</p>
+                                        <p><strong>Result:</strong> ${star.R}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+
+            // Populate Projects
+            const projectsContainer = document.getElementById('projects-container');
+            projectsContainer.innerHTML = data.projects.map(proj => `
+                <div class="project-card">
+                    <h3>${proj.name}</h3>
+                    <p><strong>What:</strong> ${proj.what}</p>
+                    <p><strong>Outcome:</strong> ${proj.outcome}</p>
+                </div>
+            `).join('');
+
+            // Add Accordion Logic
+            document.querySelectorAll('.accordion-header').forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                    
+                    button.setAttribute('aria-expanded', !isExpanded);
+                    content.hidden = isExpanded;
+                    button.querySelector('.accordion-icon').textContent = isExpanded ? '+' : '-';
+                });
             });
         })
-        .catch(err => console.error('데이터 로드 실패(hr_projects):', err));
-
-    // Skills radar from hr_skills.json
-    fetch('./data/hr_skills.json')
-        .then(r => r.json())
-        .then(mat => {
-            const skills = mat.skills || [];
-            const labels = skills.map(s => s.name);
-            const data = skills.map(s => s.level);
-            const ctx = document.getElementById('skills-radar');
-            if (ctx && window.Chart) {
-                new Chart(ctx, {
-                    type: 'radar',
-                    data: { labels, datasets: [{ label: '숙련도(10)', data, backgroundColor: 'rgba(63,81,181,0.12)', borderColor: '#3f51b5' }] },
-                    options: { scales: { r: { suggestedMin:0, suggestedMax:10 } } }
-                });
+        .catch(error => {
+            console.error('Failed to load profile data:', error);
+            const mainContainer = document.querySelector('main.container');
+            if(mainContainer) {
+                mainContainer.innerHTML = '<p style="text-align: center; color: red;">콘텐츠를 불러오는 데 실패했습니다. data/profile.json 파일이 올바른지 확인해주세요.</p>';
             }
-
-            const ul = document.getElementById('skills-list');
-            if (ul) {
-                ul.innerHTML = skills.map(s => `<li style="padding:8px 0; border-bottom:1px solid #f3f4f6">${s.name} <span style="color:#6b7280">(Lv.${s.level})</span><div style="color:#9ca3af">${s.evidence||''}</div></li>`).join('');
-            }
-        })
-        .catch(err => console.error('Skills 로드 실패:', err));
-
-    // Simple Hiring Dashboard example (mock KPIs)
-    const hiringCtx = document.getElementById('hiring-dashboard');
-    if (hiringCtx && window.Chart) {
-        const labels = ['Lead Time','Offer Rate','Acceptance Rate','Retention 3mo'];
-        const values = [35, 22, 78, 92]; // example percentages or days
-        new Chart(hiringCtx, {
-            type: 'bar',
-            data: { labels, datasets: [{ label: 'KPI (예시)', data: values, backgroundColor: ['#3f51b5','#4caf50','#ff9800','#9c27b0'] }] },
-            options: { responsive:true, plugins:{legend:{display:false}} }
         });
-        const legend = document.getElementById('dashboard-legend');
-        if (legend) legend.textContent = '예시: Lead Time(일), Offer/Acceptance/Retention(%)';
-    }
 });
