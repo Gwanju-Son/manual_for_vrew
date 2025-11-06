@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Coordinator | 포트폴리오</title>
+    <meta name="description" content="채용 프로세스 설계·운영, 온보딩, 데이터 기반 채용을 강조하는 HR Coordinator 포트폴리오입니다.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">HR Coordinator</div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">HR Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">채용과 사람을 연결하는 HR Coordinator</h1>
+                <p class="hero-subtitle">채용 프로세스 설계 · ATS 운영 · 온보딩 개선 · 데이터 기반 채용 의사결정</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
+                    <a href="#contact" class="btn btn-secondary">연락하기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>HR 철학</h3>
+                    <p>효과적인 채용은 단순한 인원 충원이 아닙니다. 적합한 레벨의 후보를 빠르게 찾아내고, 
+                       온보딩과 초기 90일의 경험을 설계하여 조직과 개인의 성공 확률을 높입니다.
+                    </p>
+                    <p>데이터로 공급망처럼 후보파이프라인을 관리하고, ATS/HRIS를 활용해 운영 효율을 높입니다.</p>
+                </div>
+                <div class="about-skills">
+                    <h3>핵심 역량</h3>
+                    <div class="skill-tags">
+                        <span class="tag">채용 프로세스 설계</span>
+                        <span class="tag">온보딩 설계</span>
+                        <span class="tag">ATS/HRIS 운영</span>
+                        <span class="tag">데이터 기반 의사결정</span>
+                        <span class="tag">프로세스 개선</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="projects">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div id="experience-list" class="projects-grid">
+                <!-- Filled by script.js using data/linkedin_kg.json -->
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">HR Projects / Case Studies</h2>
+            <div id="hr-projects" class="projects-grid">
+                <!-- Filled by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="insights">
+        <div class="container">
+            <h2 class="section-title">Skills & Hiring Dashboard</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <h3>Skilled Areas</h3>
+                    <canvas id="skills-radar" width="400" height="300"></canvas>
+                    <ul id="skills-list" style="margin-top:12px; list-style:none; padding-left:0;"></ul>
+                </div>
+                <div class="insight-card">
+                    <h3>Hiring Dashboard (예시)</h3>
+                    <canvas id="hiring-dashboard" width="400" height="300"></canvas>
+                    <div id="dashboard-legend" style="margin-top:12px; color:#6b7280;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="contact-message">이력서 또는 프로젝트 자료를 원하시면 연락주세요.</p>
+            <div class="contact-links">
+                <a href="mailto:your-email@example.com" class="contact-btn">Email</a>
+                <a href="https://www.linkedin.com" target="_blank" class="contact-btn">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 HR Coordinator</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

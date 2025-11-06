@@ -1,0 +1,29 @@
+{
+    "skills": [
+        {
+            "name": "채용 브랜딩",
+            "level": 8,
+            "evidence": "채용 공고 및 SNS 콘텐츠 기획, 채용 이벤트 운영 경험"
+        },
+        {
+            "name": "인터뷰 스킬",
+            "level": 9,
+            "evidence": "구조화된 면접 질문 설계, BEI(행동사건면접) 수행, 면접관 교육 진행"
+        },
+        {
+            "name": "데이터 분석 (HR)",
+            "level": 7,
+            "evidence": "채용 채널별 효율 분석, 퇴사율 분석 및 리포팅 (Excel, SQL)"
+        },
+        {
+            "name": "노무 지식",
+            "level": 6,
+            "evidence": "표준 근로계약서 검토, 기본적인 노동법 관련 문의 응대"
+        },
+        {
+            "name": "ATS/HRIS 운영",
+            "level": 9,
+            "evidence": "Lever, Greenhouse, Workday 등 ATS/HRIS 도입 및 운영 경험"
+        }
+    ]
+}
