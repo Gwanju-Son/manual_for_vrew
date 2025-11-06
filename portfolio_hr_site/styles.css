@@ -166,7 +166,7 @@ a:hover {
     right: -8px;
     background-color: white;
     border: 3px solid var(--primary-color);
-    top: 1.5rem; /* Align with the top padding of timeline-content */
+    top: 24px; /* Re-adjusting based on visual feedback */
     border-radius: 50%;
     z-index: 1;
 }
