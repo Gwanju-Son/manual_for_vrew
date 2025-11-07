@@ -115,6 +115,50 @@
         </div>
     </section>
 
+    <!-- Featured Project: AI Chatbot Portfolio -->
+    <section id="featured-project" class="projects" style="background-color: #f3f4f6; padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container">
+            <h2 class="section-title">Featured Project: AI 기반 대화형 포트폴리오</h2>
+            <div class="project-card featured" style="max-width: 800px; margin: 2rem auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                <div class="project-header">
+                    <h3>AI 포트폴리오 챗봇</h3>
+                    <span class="project-tag">Live Demo</span>
+                </div>
+                <p class="project-desc">
+                    <strong>문제 정의:</strong> 정적인 포트폴리오는 지원자의 특정 경험이나 역량에 대한 궁금증을 즉시 해소하기 어렵습니다.<br>
+                    <strong>해결 방안:</strong> 이력서와 포트폴리오 데이터를 기반으로 사용자의 질문에 실시간으로 답변하는 RAG(Retrieval-Augmented Generation) 챗봇을 개발했습니다. TF-IDF로 핵심 역량을 추출하고, Google Gemini API를 통해 자연스러운 답변을 생성합니다.<br>
+                    <strong>기대 효과:</strong>
+                    <ul style="margin:8px 0 0 18px; color:#6b7280;">
+                        <li>사용자(채용 담당자)의 정보 탐색 시간 단축</li>
+                        <li>지원자의 프로젝트 경험과 기술 역량에 대한 깊이 있는 이해 증진</li>
+                        <li>AI 기술 활용 능력 및 문제 해결 과정 시연</li>
+                    </ul>
+                </p>
+                <div style="display:flex; gap:8px; flex-wrap:wrap; margin:16px 0;">
+                    <span class="tag">RAG</span>
+                    <span class="tag">LLM</span>
+                    <span class="tag">Gemini API</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+                <div class="embed-note" style="margin:16px 0; color:#6b7280; font-size:14px;">
+                    아래 챗봇과 대화하며 제 경험과 역량에 대해 더 알아보세요! (예: "어떤 프로젝트를 했어?", "데이터 분석 역량은 어때?")<br>
+                    <span style="font-weight: 500;">참고:</span> 챗봇은 현재 로컬 환경에서 실행되고 있어 외부에서는 접속되지 않을 수 있습니다.
+                </div>
+                <div class="project-embed" style="height: 500px; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden;">
+                    <iframe 
+                        src="http://localhost:5001/" 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0"
+                        scrolling="auto"
+                        title="AI Portfolio Chatbot"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
